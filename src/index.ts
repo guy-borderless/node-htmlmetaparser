@@ -971,7 +971,7 @@ function setContext(node: RdfaNode, key: string, value: string) {
  * Normalize a HTML value, trimming and removing whitespace.
  */
 function normalize(value?: string): string | undefined {
-  return value === undefined ? undefined : value.trim().replace(/\s+/g, " ");
+  return value === undefined ? undefined : value.trim().replace(/\s+/g, " ").replaceAll("&quot;", "\"")
 }
 
 /**
